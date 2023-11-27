@@ -9,14 +9,14 @@ from pickle import load
 st.header('Crops Harvest session Prediction')
 # df = pd.read_pickle('dataset.pickle')
 # def load_data():
-#     # data= load(open('dataset.pickle','rb'))
-#     df = pd.read_pickle('dataset.pickle')
+#     # data= load(open('model_file/dataset.pickle','rb'))
+    df = pd.read_pickle('model_file/dataset.pickle')
 
-#     return df
-# crop = load_data()
+     return df
+ crop = load_data()
 
 def load_model():
-    model=load(open('decision_tree.pickle','rb'))
+    model=load(open('model_file/decision_tree.pickle','rb'))
     return model
 models =load_model()
 crops = st.selectbox('Choose crop',options=['rice','maize','chickpea','kidneybeans','pigeonpeas','mothbeans','mungbean','blackgram',
