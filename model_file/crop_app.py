@@ -6,7 +6,7 @@ from pickle import load
 # DATA_URL= st.secrets['DATA_URL']
 
 #@st.cache_data
-st.header('Crops Harvest session Prediction')
+st.header('Crops Harvest season Prediction')
 # df = pd.read_pickle('dataset.pickle')
 def load_data():
 #     # data= load(open('model_file/dataset.pickle','rb'))
