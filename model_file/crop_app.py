@@ -12,9 +12,8 @@ def load_data():
 #     # data= load(open('model_file/dataset.pickle','rb'))
     df = pd.read_pickle('model_file/dataset.pickle')
 
-     return df
- crop = load_data()
-
+    return df
+crop = load_data()
 def load_model():
     model=load(open('model_file/decision_tree.pickle','rb'))
     return model
