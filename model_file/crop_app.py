@@ -17,8 +17,9 @@ def load_data():
 crop = load_data()
 def load_model():
     model=load(open('model_file/decision_tree.pickle','rb'))
-    return model
-models =load_model()
+    scaler=load(open('model_file/scaler.pickle', 'rb'))
+    return model, scaler
+models, scaler =load_model()
 crops = st.selectbox('Choose crop',options=['rice','maize','chickpea','kidneybeans','pigeonpeas','mothbeans','mungbean','blackgram',
                                            'lentil','watermelon','muskmelon','cotton','jute'])
 country = st.selectbox('choose country', options=['Nigeria','South Africa','Kenya','Sudan'])
