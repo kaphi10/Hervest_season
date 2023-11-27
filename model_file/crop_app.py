@@ -7,12 +7,13 @@ from pickle import load
 
 #@st.cache_data
 st.header('Crops Harvest session Prediction')
-def load_data():
-    # data= load(open('dataset.pickle','rb'))
-    df = pd.read_pickle('dataset.pickle')
+df = pd.read_pickle('dataset.pickle')
+# def load_data():
+#     # data= load(open('dataset.pickle','rb'))
+#     df = pd.read_pickle('dataset.pickle')
 
-    return df
-crop = load_data()
+#     return df
+# crop = load_data()
 
 def load_model():
     model=load(open('decision_tree.pickle','rb'))
