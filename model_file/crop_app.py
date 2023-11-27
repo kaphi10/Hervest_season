@@ -71,9 +71,14 @@ label_value= {'rainy': 0, 'winter': 3, 'spring': 1, 'summer': 2}
 label_val_re={0:'rainy', 3:'winter',1:'spring',2:'summer'}
 correct_order={0:'rainy',1:'spring',2:'summer',3:'winter'}
 if st.button('Predict'):
-    new_prediction=models.predict([[temprature,ph,humidity,water,label_blackgram,label_chickpea,label_cotton,label_jute,label_kidneybeans,label_lentil,label_maize,
-                                label_mothbeans,label_mungbean,label_muskmelon,label_pigeonpeas
-                                ,label_rice,label_watermelon,Country_Sudan,Country_Nigeria,Country_South_Africa,Country_Kenya]])
+    user_value= [[temprature,ph,humidity,water,label_blackgram,label_chickpea,label_cotton,label_jute,label_kidneybeans,
+                label_lentil,label_maize,label_mothbeans,label_mungbean,label_muskmelon,label_pigeonpeas,
+                label_rice,label_watermelon,Country_Sudan,Country_Nigeria,Country_South_Africa,Country_Kenya]]
+    user_value= scaler.transform(user_value)
+    user_value_asray = np.array(user_value)
+    user_value_reshape=user_value_asray.reshape(1,-1)
+
+    new_prediction=models.predict(user_value_reshape)
     predicted_season = crop[new_prediction][0]
     if predicted_season == 0:
         st.write('The predicted harvest period is rainy')
