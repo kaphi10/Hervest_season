@@ -8,7 +8,7 @@ from pickle import load
 #@st.cache_data
 st.header('Crops Harvest session Prediction')
 # df = pd.read_pickle('dataset.pickle')
- def load_data():
+def load_data():
 #     # data= load(open('model_file/dataset.pickle','rb'))
     df = pd.read_pickle('model_file/dataset.pickle')
 
